@@ -38,7 +38,7 @@ export default async function BlogCategoryPage({ params }: { params: Promise<{ c
         Back to Blog
       </Link>
 
-      <h1 className="text-3xl font-bold mb-2">Category: {categoryDisplayName(category)}</h1>
+      <h1 className="text-3xl font-bold mb-2">Category: {category ? categoryDisplayName(category) : ""}</h1>
       <p className="text-muted-foreground mb-6">{filteredPost.length} post{filteredPost.length !== 1 ? "s" : ""} in this category</p>
 
       {/* Filter Category */}

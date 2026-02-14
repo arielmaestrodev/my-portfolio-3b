@@ -6,14 +6,15 @@ import { notFound } from "next/navigation";
 export default async function BlogPostPage({ params }: { params: Promise<{ post: string }> }) {
   const { post } = await params;
   const segment = post[0];
+  console.log(segment);
   
   const blogPost = BLOG_POSTS.find((post) => post.slug === segment);
+  console.log("Data: ", blogPost);
 
   if (!blogPost || blogPost === null) {
     notFound();
-  }
 
-  console.log(blogPost);
+  }
   
   return (
     <article className="py-8">
